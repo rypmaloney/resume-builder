@@ -16,7 +16,7 @@ class App extends React.Component {
       e.preventDefault();
       this.setState({
         contact: {
-          name: e.target.value,
+          name: e.target.contactInput.value,
       },
       });
     };
