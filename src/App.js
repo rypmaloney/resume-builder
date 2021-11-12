@@ -8,6 +8,8 @@ class App extends React.Component {
         this.state = {
             contact: {
                 name: null,
+                address: null,
+                email: null,
             },
         };
     }
@@ -16,7 +18,9 @@ class App extends React.Component {
       e.preventDefault();
       this.setState({
         contact: {
-          name: e.target.contactInput.value,
+          name: e.target.nameInput.value,
+          address: e.target.addressInput.value,
+          email: e.target.emailInput.value,
       },
       });
     };
@@ -25,7 +29,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Contact click={this.onSubmitName} name={this.state.contact.name} />
+                <Contact click={this.onSubmitName} contact={this.state.contact} />
                 <p>The start of something</p>
             </div>
         );
