@@ -5,19 +5,19 @@ const Contact = (props) => {
 
     return (
         <div>
-            <form onSubmit= {props.click}>
+            <form onSubmit={props.click}>
                 <label htmlFor="nameInput">Name:</label>
                 <input type="text" id="nameInput" />
+                <br />
                 <label htmlFor="addressInput">Address:</label>
                 <input type="text" id="addressInput" />
+                <br />
                 <label htmlFor="emailInput">Email</label>
                 <input type="text" id="emailInput" />
+                <br />
                 <button type="submit">Submit</button>
+                <br />
             </form>
-            <p>{props.contact.name}</p>
-            <p>{props.contact.address}</p>
-            <p>{props.contact.email}</p>
-
         </div>
     );
 };

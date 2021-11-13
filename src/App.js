@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Contact from "./components/Contact.js";
+import ContactDisplay from "./components/display/ContactDisplay";
 
 class App extends React.Component {
     constructor(props) {
@@ -15,22 +16,27 @@ class App extends React.Component {
     }
 
     onSubmitName = (e) => {
-      e.preventDefault();
-      this.setState({
-        contact: {
-          name: e.target.nameInput.value,
-          address: e.target.addressInput.value,
-          email: e.target.emailInput.value,
-      },
-      });
+        e.preventDefault();
+        this.setState({
+            contact: {
+                name: e.target.nameInput.value,
+                address: e.target.addressInput.value,
+                email: e.target.emailInput.value,
+            },
+        });
     };
-
 
     render() {
         return (
-            <div>
-                <Contact click={this.onSubmitName} contact={this.state.contact} />
-                <p>The start of something</p>
+            <div className="App">
+                
+                <Contact
+                    click={this.onSubmitName}
+                    contact={this.state.contact}
+                />
+                
+                  <ContactDisplay contact={this.state.contact} />
+                
             </div>
         );
     }
