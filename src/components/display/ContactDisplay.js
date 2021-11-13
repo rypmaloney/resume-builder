@@ -1,4 +1,5 @@
 import React from "react";
+import "./ContactDisplay.css"
 
 const ContactDisplay = (props) => {
     //const { tasks } = props;
@@ -6,9 +7,11 @@ const ContactDisplay = (props) => {
     return (
         <div>
                 <div className="contact-display">
-                    <p>{props.contact.name}</p>
-                    <p>{props.contact.address}</p>
-                    <p>{props.contact.email}</p>
+                    <h1>{props.contact.name}</h1>
+                    <div>
+                        <p>{props.contact.address}</p>
+                        <p>{props.contact.email}</p>
+                    </div>
                 </div>
         </div>
     );

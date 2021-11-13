@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Contact from "./components/Contact.js";
 import ContactDisplay from "./components/display/ContactDisplay";
+import Education from "./components/Education";
 
 class App extends React.Component {
     constructor(props) {
@@ -29,15 +30,18 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
+            
               <div className="form">
-                
+              <h1>Resume Builder</h1>
                 <Contact
                     click={this.onSubmitName}
                     contact={this.state.contact}
                 />
+                <Education />
               </div>
               <div className="display">
                 <ContactDisplay contact={this.state.contact} />
+                <hr></hr>
               </div>
             </div>
         );

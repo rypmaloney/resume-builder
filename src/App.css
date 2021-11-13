@@ -11,6 +11,7 @@
   width: 540px;
   min-width: 540px;
   margin: 10px;
+  padding: 10px;
 }
 
 .display{
@@ -19,4 +20,14 @@
   min-width: 540px;
   height: 700px;
   margin: 10px;
+  padding: 10px;
+}
+
+input[type=text]{
+  margin: 10px;
+  border: none;
+  border-bottom: 2px solid gray;
+}
+input[type=text]:focus{
+  outline: none;
 }

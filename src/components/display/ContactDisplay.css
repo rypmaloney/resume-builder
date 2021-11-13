@@ -1,0 +1,18 @@
+.contact-display{
+    display:flex;
+    flex-direction:row;
+    font-family: 'Times New Roman', Times, serif;
+}
+.contact-display div{
+    margin-top: 20px;
+    flex-direction: column;
+}
+
+.contact-display p{
+    font-size: 12px;
+    margin: 0 0 0 25px;
+}
+.contact-display h1{
+    font-size: 45px;
+    margin-top: 8px;
+}
