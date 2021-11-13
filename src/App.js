@@ -29,14 +29,16 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
+              <div className="form">
                 
                 <Contact
                     click={this.onSubmitName}
                     contact={this.state.contact}
                 />
-                
-                  <ContactDisplay contact={this.state.contact} />
-                
+              </div>
+              <div className="display">
+                <ContactDisplay contact={this.state.contact} />
+              </div>
             </div>
         );
     }
