@@ -1,7 +1,7 @@
 import React from "react";
-import "./ContactDisplay.css"
+import "./Display.css"
 
-const ContactDisplay = (props) => {
+const Display = (props) => {
     //const { tasks } = props;
 
     return (
@@ -17,4 +17,4 @@ const ContactDisplay = (props) => {
     );
 };
 
-export default ContactDisplay;
+export default Display;

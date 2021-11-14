@@ -1,8 +1,9 @@
 import React from "react";
 import "./App.css";
 import Contact from "./components/Contact.js";
-import ContactDisplay from "./components/display/ContactDisplay";
+import Display from "./components/display/Display";
 import Education from "./components/Education";
+import Experience from "./components/Experience";
 
 class App extends React.Component {
     constructor(props) {
@@ -38,10 +39,10 @@ class App extends React.Component {
                     contact={this.state.contact}
                 />
                 <Education />
+                <Experience />
               </div>
               <div className="display">
-                <ContactDisplay contact={this.state.contact} />
-                <hr></hr>
+                <Display contact={this.state.contact} />
               </div>
             </div>
         );

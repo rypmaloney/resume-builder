@@ -16,7 +16,8 @@ const Education = (props) => {
                 <label htmlFor="emailInput">Email:</label>
                 <input type="text" id="emailInput" />
                 <br />
-                <button type="submit">Submit Contact Info</button>
+                <button type="submit">Submit Ed Info</button>
+                <button>Add Another Institution</button>
                 <br />
             </form>
         </div>
