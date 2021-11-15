@@ -10,9 +10,9 @@ class App extends React.Component {
         super();
         this.state = {
             contact: {
-                name: null,
-                address: null,
-                email: null,
+                name: "Ryan Maloney",
+                address: "Boston, MA",
+                email: "rypmaloney@gmail.com",
             },
         };
     }
@@ -28,6 +28,17 @@ class App extends React.Component {
         });
     };
 
+    handleChange = (e) => {
+      console.log(e.target.value)
+      this.setState({
+        contact: {
+          name: e.target.value,
+
+      },
+      });
+
+    }
+
     render() {
         return (
             <div className="App">
@@ -35,6 +46,7 @@ class App extends React.Component {
               <div className="form">
               <h1>Resume Builder</h1>
                 <Contact
+                    change={this.handleChange}
                     click={this.onSubmitName}
                     contact={this.state.contact}
                 />

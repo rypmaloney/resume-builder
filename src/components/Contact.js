@@ -8,7 +8,7 @@ const Contact = (props) => {
         <h2>Contact information</h2>
             <form onSubmit={props.click}>
                 <label htmlFor="nameInput">Name:</label>
-                <input type="text" id="nameInput" />
+                <input onChange={props.change} type="text" id="nameInput" />
                 <br />
                 <label htmlFor="addressInput">City:</label>
                 <input type="text" id="addressInput" />
