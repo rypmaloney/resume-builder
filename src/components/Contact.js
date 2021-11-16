@@ -7,14 +7,14 @@ const Contact = (props) => {
         <div>
         <h2>Contact information</h2>
             <form onSubmit={props.click}>
-                <label htmlFor="nameInput">Name:</label>
-                <input onChange={props.change} type="text" id="nameInput" />
+                <label htmlFor="name">Name:</label>
+                <input onChange={props.change} type="text" id="name" />
                 <br />
-                <label htmlFor="addressInput">City:</label>
-                <input type="text" id="addressInput" />
+                <label htmlFor="address">City:</label>
+                <input onChange={props.change}type="text" id="address" />
                 <br />
-                <label htmlFor="emailInput">Email:</label>
-                <input type="text" id="emailInput" />
+                <label htmlFor="email">Email:</label>
+                <input onChange={props.change} type="text" id="email" />
                 <br />
                 <button type="submit">Submit Contact Info</button>
                 <br />

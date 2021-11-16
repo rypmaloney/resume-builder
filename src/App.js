@@ -21,18 +21,19 @@ class App extends React.Component {
         e.preventDefault();
         this.setState({
             contact: {
-                name: e.target.nameInput.value,
-                address: e.target.addressInput.value,
-                email: e.target.emailInput.value,
+                name: e.target.name.value,
+                address: e.target.address.value,
+                email: e.target.email.value,
             },
         });
     };
 
     handleChange = (e) => {
-      console.log(e.target.value)
+      console.log(e.target.id)
+      let field = e.target.id
       this.setState({
         contact: {
-          name: e.target.value,
+          [field]: e.target.value,
 
       },
       });
