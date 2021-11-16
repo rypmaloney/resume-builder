@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Contact from "./components/Contact.js";
+import Form from "./components/Form.js";
 import Display from "./components/display/Display";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
@@ -12,6 +12,18 @@ class App extends React.Component {
             name: "Ryan Maloney",
             address: "Boston, MA",
             email: "rypmaloney@gmail.com",
+            education:[
+              {
+                institution: "New University",
+                year: "2013",
+                details: "Lorem ipsum baby"
+              },
+              {
+                institution: "Univeristy of Massachusetts, Amherst",
+                year: "201",
+                details: "Lorem ipsum baby"
+              }
+            ]
         };
     }
 
@@ -37,16 +49,15 @@ class App extends React.Component {
             <div className="App">
                 <div className="form">
                     <h1>Resume Builder</h1>
-                    <Contact
+                    <Form
                         change={this.handleChange}
                         click={this.onSubmitName}
                         contact={this.state.contact}
                     />
-                    <Education />
-                    <Experience />
+                   
                 </div>
                 <div className="display">
-                    <Display contact={this.state} />
+                    <Display state={this.state} />
                 </div>
             </div>
         );

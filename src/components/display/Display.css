@@ -21,21 +21,21 @@
     margin-top: 8px;
 }
 
-.school {
+.institution {
     display: flex;
     flex-direction: column;
     margin: 10px 0 0 15px;
 }
 
-.ed-title{
+.edex-title{
     display: flex;
     flex-direction: row;
     width: 500px;
 }
-.ed-title p {
+.edex-title p {
     justify-self: right;
     margin-left:auto;
 }
-.ed-title h3{
+.edex-title h3{
     margin-right: auto;
 }
