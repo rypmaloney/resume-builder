@@ -16,18 +16,18 @@ class App extends React.Component {
               {
                 institution: "New University",
                 year: "2013",
-                details: "Lorem ipsum baby"
+                details: "Lorem ipsum baby Lorem ipsum baby Lorem ipsum babyLorem ipsum baby Lorem ipsum baby Lorem ipsum baby Lorem ipsum baby Lorem ipsum baby"
               },
               {
                 institution: "Univeristy of Massachusetts, Amherst",
-                year: "201",
-                details: "Lorem ipsum baby"
+                year: "2016",
+                details: "Lorem ipsum baby Lorem ipsum baby Lorem ipsum baby Lorem ipsum baby v Lorem ipsum baby Lorem ipsum baby v v Lorem ipsum baby"
               }
             ]
         };
     }
 
-    onSubmitName = (e) => {
+    onSubmitContact = (e) => {
         e.preventDefault();
         this.setState({
             name: e.target.name.value,
@@ -35,6 +35,11 @@ class App extends React.Component {
             email: e.target.email.value,
         });
     };
+    onSubmitEd = (e) => {
+      e.preventDefault();
+      
+    }
+
 
     handleChange = (e) => {
         console.log(e.target.id);
@@ -51,8 +56,8 @@ class App extends React.Component {
                     <h1>Resume Builder</h1>
                     <Form
                         change={this.handleChange}
-                        click={this.onSubmitName}
-                        contact={this.state.contact}
+                        click={this.onSubmit}
+                        education={this.state.education}
                     />
                    
                 </div>
