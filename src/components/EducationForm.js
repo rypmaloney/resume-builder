@@ -5,15 +5,15 @@ const EducationForm = (props) => {
 
     return (
         <div>
-            <form onSubmit={props.click}>
+            <form onSubmit={props.clickEd}>
                 <label htmlFor="nameInput">Institution:</label>
-                <input type="text" id="institution" />
+                <input onChange={props.changeEd} type="text" id="institution" />
                 <br />
                 <label htmlFor="address">Date:</label>
-                <input type="text" id="date" />
+                <input onChange={props.changeEd} type="text" id="year" />
                 <br />
                 <label htmlFor="emailInput">description:</label>
-                <input type="text" id="desc" />
+                <input onChange={props.changeEd} type="text" id="desc" />
                 <br />
                 <button type="submit">Submit Ed Info</button>
                 

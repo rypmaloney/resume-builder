@@ -12,18 +12,20 @@ class App extends React.Component {
             name: "Ryan Maloney",
             address: "Boston, MA",
             email: "rypmaloney@gmail.com",
-            education:[
-              {
-                institution: "New University",
-                year: "2013",
-                details: "Lorem ipsum baby Lorem ipsum baby Lorem ipsum babyLorem ipsum baby Lorem ipsum baby Lorem ipsum baby Lorem ipsum baby Lorem ipsum baby"
-              },
-              {
-                institution: "Univeristy of Massachusetts, Amherst",
-                year: "2016",
-                details: "Lorem ipsum baby Lorem ipsum baby Lorem ipsum baby Lorem ipsum baby v Lorem ipsum baby Lorem ipsum baby v v Lorem ipsum baby"
-              }
-            ]
+            education: [
+                {
+                    institution: "New University",
+                    year: "2013",
+                    details:
+                        "Lorem ipsum baby Lorem ipsum baby Lorem ipsum babyLorem ipsum baby Lorem ipsum baby Lorem ipsum baby Lorem ipsum baby Lorem ipsum baby",
+                },
+                {
+                    institution: "Univeristy of Massachusetts, Amherst",
+                    year: "2016",
+                    details:
+                        "Lorem ipsum baby Lorem ipsum baby Lorem ipsum baby Lorem ipsum baby v Lorem ipsum baby Lorem ipsum baby v v Lorem ipsum baby",
+                },
+            ],
         };
     }
 
@@ -36,13 +38,29 @@ class App extends React.Component {
         });
     };
     onSubmitEd = (e) => {
-      e.preventDefault();
-      
-    }
+        e.preventDefault();
+        this.setState(
+          {education: this.state.education.concat(this.state.curEd)}
+        )
+        this.state.education.concat(this.state.curEd);
+        console.log(this.state)
+        
+    };
 
+    handleEdChange = (e) => {
+      let field = e.target.id;
+
+        this.setState({
+            curEd: [
+                {
+                  [field]: e.target.value,
+                },
+            ],
+        });
+        console.log(this.state)
+    };
 
     handleChange = (e) => {
-        console.log(e.target.id);
         let field = e.target.id;
         this.setState({
             [field]: e.target.value,
@@ -58,8 +76,9 @@ class App extends React.Component {
                         change={this.handleChange}
                         click={this.onSubmit}
                         education={this.state.education}
+                        clickEd={this.onSubmitEd}
+                        changeEd={this.handleEdChange}
                     />
-                   
                 </div>
                 <div className="display">
                     <Display state={this.state} />

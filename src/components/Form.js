@@ -24,9 +24,14 @@ const Form = (props) => {
             <h2>Education</h2>
             {/* iterate through number of educations to determine forms and input - Uniqid???    */}
             {props.education.map((edu) => {
-                return <EducationForm />;
+                return (
+                    <EducationForm
+                        clickEd={props.clickEd}
+                        changeEd={props.changeEd}
+                    />
+                );
             })}
-        
+
             <button>Add Another Institution</button>
             <h2>Experience</h2>
             <form onSubmit={props.click}>
