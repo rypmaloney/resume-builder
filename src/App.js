@@ -39,25 +39,24 @@ class App extends React.Component {
     };
     onSubmitEd = (e) => {
         e.preventDefault();
-        this.setState(
-          {education: this.state.education.concat(this.state.curEd)}
-        )
+        this.setState({
+            education: this.state.education.concat(this.state.curEd),
+        });
         this.state.education.concat(this.state.curEd);
-        console.log(this.state)
-        
+        console.log(this.state);
     };
 
     handleEdChange = (e) => {
-      let field = e.target.id;
+        let field = e.target.id;
 
         this.setState({
             curEd: [
                 {
-                  [field]: e.target.value,
+                    [field]: e.target.value,
                 },
             ],
         });
-        console.log(this.state)
+        console.log(this.state);
     };
 
     handleChange = (e) => {
