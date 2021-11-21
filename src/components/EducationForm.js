@@ -17,6 +17,7 @@ const EducationForm = (props) => {
                 <input onChange={props.changeEd} type="text" id="desc" value={props.desc}/>
                 <br />
                 <button type="submit">Submit Ed Info</button>
+                {/* Use props.index - create a function that updates education[index] */}
                 
                 <br />
             </form>

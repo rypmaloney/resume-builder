@@ -33,6 +33,7 @@ const Form = (props) => {
                         institution={props.education[index].institution}
                         year={props.education[index].year}
                         desc={props.education[index].details}
+                        index={index}
                     />
                 )
                 index+=1;
