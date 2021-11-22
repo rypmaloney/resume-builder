@@ -39,15 +39,25 @@ class App extends React.Component {
     };
     onSubmitEd = (e) => {
         e.preventDefault();
+        let educopy = this.state.education
+        educopy = {
+          institution: e.target.institution.value,
+          year: e.target.year.value,
+          details: e.target.desc.value,
+          id: '',
+
+          }
         this.setState({
-            education: this.state.education.concat(this.state.curEd),
+          education: educopy,
+        
         });
-        this.state.education.concat(this.state.curEd);
-        console.log(this.state);
+       
+
     };
 
     handleEdChange = (e) => {
         let field = e.target.id;
+        let curEd = `education`
 
         this.setState({
             curEd: [
@@ -56,7 +66,7 @@ class App extends React.Component {
                 },
             ],
         });
-        console.log(this.state);
+
     };
 
     handleChange = (e) => {

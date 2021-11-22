@@ -23,21 +23,12 @@ const Form = (props) => {
             </form>
             <h2>Education</h2>
             {/* iterate through number of educations to determine forms and input - Uniqid???    */}
-            {props.education.map((edu,index) => {
-                console.log(props.education[index])
-                return (
-                    <EducationForm
-                        clickEd={props.clickEd}
-                        changeEd={props.changeEd}
-                        state={props.state}
-                        institution={props.education[index].institution}
-                        year={props.education[index].year}
-                        desc={props.education[index].details}
-                        index={index}
-                    />
-                )
-                index+=1;
-                
+            <EducationForm
+                clickEd={props.clickEd}
+                changeEd={props.changeEd}
+            />
+            {props.education.map((edu) =>{
+            return <button>Edit {edu.institution}</button>
             })}
 
             <button>Add Another Institution</button>

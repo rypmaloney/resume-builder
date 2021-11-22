@@ -8,13 +8,13 @@ const EducationForm = (props) => {
         <div>
             <form onSubmit={props.clickEd}>
                 <label htmlFor="nameInput">Institution:</label>
-                <input onChange={props.changeEd} type="text" id="institution" value={props.institution} />
+                <input onChange={props.changeEd} type="text" id="institution" /*value={props.institution} *//>
                 <br />
                 <label htmlFor="address">Date:</label>
-                <input onChange={props.changeEd} type="text" id="year" value={props.year} />
+                <input onChange={props.changeEd} type="text" id="year"  />
                 <br />
                 <label htmlFor="emailInput">description:</label>
-                <input onChange={props.changeEd} type="text" id="desc" value={props.desc}/>
+                <input onChange={props.changeEd} type="text" id="desc" />
                 <br />
                 <button type="submit">Submit Ed Info</button>
                 {/* Use props.index - create a function that updates education[index] */}
