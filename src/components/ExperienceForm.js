@@ -1,36 +1,36 @@
 import React, { Component } from "react";
 
-class EducationForm extends React.Component {
+class ExperienceForm extends React.Component {
     render() {
-        const { thisEd, index, updateEd, changeEd } = this.props;
+        const { thisXP, index, updateXP, changeXP } = this.props;
 
         return (
             <div>
-                <form onSubmit={(e) => updateEd(e, index)}>
+                <form onSubmit={(e) => updateXP(e, index)}>
                     <label htmlFor="nameInput">Institution:</label>
                     <input
-                        onChange={(e) => changeEd(e, index)}
+                        onChange={(e) => changeXP(e, index)}
                         type="text"
                         id="institution"
-                        value={thisEd.institution}
+                        value={thisXP.institution}
                     />
                     <br />
                     <label htmlFor="address">Date:</label>
                     <input
-                        onChange={(e) => changeEd(e, index)}
+                        onChange={(e) => changeXP(e, index)}
                         type="text"
                         id="year"
-                        value={thisEd.year}
+                        value={thisXP.year}
                     />
                     <br />
 
                     <textarea
                      placeholder="Description" 
                         rows="5"
-                        onChange={(e) => changeEd(e, index)}
+                        onChange={(e) => changeXP(e, index)}
                         type="text"
                         id="details"
-                        value={thisEd.details}
+                        value={thisXP.details}
                     />
                     <br />
                     {/* Use props.index - create a function that updates education[index] */}
@@ -42,4 +42,4 @@ class EducationForm extends React.Component {
     }
 }
 
-export default EducationForm;
+export default ExperienceForm;

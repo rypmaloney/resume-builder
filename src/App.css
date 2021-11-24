@@ -59,3 +59,12 @@ p{
 hr {
   margin-top: 20px;
 }
+
+textarea{
+  margin: 10px;
+  width: 400px;
+  border: none;
+
+}
+
+

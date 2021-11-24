@@ -2,30 +2,17 @@ import React from "react";
 import "./App.css";
 import Form from "./components/Form.js";
 import Display from "./components/display/Display";
-import Education from "./components/Education";
-import Experience from "./components/Experience";
+
 
 class App extends React.Component {
     constructor(props) {
         super();
         this.state = {
-            name: "Ryan Maloney",
-            address: "Boston, MA",
-            email: "rypmaloney@gmail.com",
-            education: [
-                {
-                    institution: "New University",
-                    year: "2013",
-                    details:
-                        "Lorem ipsum baby Lorem ipsum baby Lorem ipsum babyLorem ipsum baby Lorem ipsum baby Lorem ipsum baby Lorem ipsum baby Lorem ipsum baby",
-                },
-                {
-                    institution: "Univeristy of Massachusetts, Amherst",
-                    year: "2016",
-                    details:
-                        "Lorem ipsum baby Lorem ipsum baby Lorem ipsum baby Lorem ipsum baby v Lorem ipsum baby Lorem ipsum baby v v Lorem ipsum baby",
-                },
-            ],
+            name: "",
+            address: "",
+            email: "",
+            education: [],
+            experience:[],
         };
     }
 
@@ -52,6 +39,20 @@ class App extends React.Component {
             education: eduCopy,
         });
     };
+    updateXP = (e, index) => {
+      e.preventDefault();
+
+      const xpCopy = this.state.experience.slice();
+      xpCopy[index] = {
+          institution: e.target.institution.value,
+          year: e.target.year.value,
+          details: e.target.desc.value,
+          id: "",
+      };
+      this.setState({
+          experience: xpCopy,
+      });
+  };
 
     handleEdChange = (e, index) => {
         let field = e.target.id;
@@ -62,6 +63,15 @@ class App extends React.Component {
             education: eduCopy,
         });
     };
+    handleXPChange = (e, index) => {
+      let field = e.target.id;
+      const xpCopy = this.state.experience.slice();
+      xpCopy[index][field] = e.target.value;
+
+      this.setState({
+          experience: xpCopy,
+      });
+  };
 
     handleChange = (e) => {
         let field = e.target.id;
@@ -76,9 +86,19 @@ class App extends React.Component {
             year: "",
             details: "",
         });
-        console.log(curEd)
+
         this.setState({ education: curEd });
     };
+    addXP = () => {
+      let curXP = this.state.experience.slice()
+      curXP.push({
+          institution: "",
+          year: "",
+          details: "",
+      });
+
+      this.setState({ experience: curXP });
+  };
 
     render() {
         return (
@@ -89,10 +109,13 @@ class App extends React.Component {
                         change={this.handleChange}
                         click={this.onSubmit}
                         education={this.state.education}
-                        clickEd={this.onSubmitEd}
                         changeEd={this.handleEdChange}
                         updateEd={this.updateEd}
                         addEd = {this.addEd}
+                        experience={this.state.experience}
+                        changeXP={this.handleXPChange}
+                        updateXP={this.updateXP}
+                        addXP={this.addXP}
                     />
                 </div>
                 <div className="display">

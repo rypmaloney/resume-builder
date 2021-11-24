@@ -7,11 +7,11 @@ const Experience = (props) => {
         <div>
             <div className="institution">
                 <div className="edex-title">
-                    <h3>{props.work.institution}</h3>
-                    <p>{props.work.year}</p>
+                    <h3>{props.experience.institution}</h3>
+                    <p>{props.experience.year}</p>
                 </div>
 
-                <p>{props.work.details}</p>
+                <p>{props.experience.details}</p>
             </div>
         </div>
     );

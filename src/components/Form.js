@@ -1,6 +1,6 @@
 import React from "react";
-import Education from "./Education";
 import EducationForm from "./EducationForm";
+import ExperienceForm from "./ExperienceForm";
 
 class Form extends React.Component {
     //const { tasks } = props;
@@ -26,9 +26,7 @@ class Form extends React.Component {
                         type="text"
                         id="email"
                     />
-                    <br />
-                    <button type="submit">Submit Contact Info</button>
-                    <br />
+
                 </form>
                 <h2>Education</h2>
                 {/* iterate through number of educations to determine forms and input - Uniqid???    */}
@@ -40,7 +38,7 @@ class Form extends React.Component {
                             changeEd={this.props.changeEd}
                             thisEd={this.props.education[index]}
                             index = {index}
-                            updateEd= {this.props.updateEd}
+                            updateEd= {updateEd}
 
                         />
                     );
@@ -50,20 +48,23 @@ class Form extends React.Component {
 
                 <button onClick={this.props.addEd}>Add Another Institution</button>
                 <h2>Experience</h2>
-                <form onSubmit={this.props.click}>
-                    <label htmlFor="nameInput">Name:</label>
-                    <input type="text" id="nameInput" />
-                    <br />
-                    <label htmlFor="addressInput">City:</label>
-                    <input type="text" id="addressInput" />
-                    <br />
-                    <label htmlFor="emailInput">Email:</label>
-                    <input type="text" id="emailInput" />
-                    <br />
-                    <button type="submit">Submit XP Info</button>
-                    <button>Add Another Job</button>
-                    <br />
-                </form>
+                {this.props.experience.map((edu, index) => {
+                 
+                 return (
+                     <ExperienceForm
+                         clickXP={this.props.clickXP}
+                         changeXP={this.props.changeXP}
+                         thisXP={this.props.experience[index]}
+                         index = {index}
+                         updateXP= {this.props.updateXP}
+
+                     />
+                 );
+             })}
+
+             {/* USE THIS TO PUT THE CORRECT EDUCATION AS THE FORM VALUE */}
+
+             <button onClick={this.props.addXP}>Add Another Institution</button>
             </div>
         );
     }
