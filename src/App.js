@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Form from "./components/Form.js";
 import Display from "./components/display/Display";
+import uniqId from "uniqid"
 
 
 class App extends React.Component {
@@ -33,7 +34,7 @@ class App extends React.Component {
             institution: e.target.institution.value,
             year: e.target.year.value,
             details: e.target.desc.value,
-            id: "",
+            id: uniqId(),
         };
         this.setState({
             education: eduCopy,
@@ -41,17 +42,17 @@ class App extends React.Component {
     };
     updateXP = (e, index) => {
       e.preventDefault();
-
       const xpCopy = this.state.experience.slice();
       xpCopy[index] = {
           institution: e.target.institution.value,
           year: e.target.year.value,
           details: e.target.desc.value,
-          id: "",
+          id: uniqId(),
       };
       this.setState({
           experience: xpCopy,
       });
+      
   };
 
     handleEdChange = (e, index) => {
@@ -85,8 +86,9 @@ class App extends React.Component {
             institution: "",
             year: "",
             details: "",
+            id: uniqId(),
         });
-
+        
         this.setState({ education: curEd });
     };
     addXP = () => {
@@ -95,6 +97,7 @@ class App extends React.Component {
           institution: "",
           year: "",
           details: "",
+          id: uniqId(),
       });
 
       this.setState({ experience: curXP });

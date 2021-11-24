@@ -2,6 +2,7 @@ import React from "react";
 import EducationForm from "./EducationForm";
 import ExperienceForm from "./ExperienceForm";
 
+
 class Form extends React.Component {
     //const { tasks } = props;
     render() {
@@ -34,6 +35,7 @@ class Form extends React.Component {
                  
                     return (
                         <EducationForm
+                            key={edu.id} 
                             clickEd={this.props.clickEd}
                             changeEd={this.props.changeEd}
                             thisEd={this.props.education[index]}
@@ -48,10 +50,11 @@ class Form extends React.Component {
 
                 <button onClick={this.props.addEd}>Add Another Institution</button>
                 <h2>Experience</h2>
-                {this.props.experience.map((edu, index) => {
+                {this.props.experience.map((XP, index) => {
                  
                  return (
                      <ExperienceForm
+                         key={XP.id} 
                          clickXP={this.props.clickXP}
                          changeXP={this.props.changeXP}
                          thisXP={this.props.experience[index]}

@@ -19,7 +19,7 @@ const Display = (props) => {
             <div className="edex-display">
                 <h2>Education</h2>
                 {props.state.education.map((edu) => {
-                    return <Education school={edu} />
+                    return <Education key={edu.id} school={edu} />
                 })}
 
             </div>
@@ -28,7 +28,7 @@ const Display = (props) => {
                 <h2>Experience</h2>
 
                 {props.state.experience.map((edu) => {
-                    return <Experience experience={edu} />
+                    return <Experience key={edu.id}experience={edu} />
                 })}
 
             </div>
