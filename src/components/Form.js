@@ -5,7 +5,7 @@ import EducationForm from "./EducationForm";
 class Form extends React.Component {
     //const { tasks } = props;
     render() {
-        const { updateEd } = this.props
+        const { updateEd } = this.props;
         return (
             <div>
                 <h2>Contact information</h2>
@@ -14,24 +14,45 @@ class Form extends React.Component {
                     <input onChange={this.props.change} type="text" id="name" />
                     <br />
                     <label htmlFor="address">City:</label>
-                    <input onChange={this.props.change} type="text" id="address" />
+                    <input
+                        onChange={this.props.change}
+                        type="text"
+                        id="address"
+                    />
                     <br />
                     <label htmlFor="email">Email:</label>
-                    <input onChange={this.props.change} type="text" id="email" />
+                    <input
+                        onChange={this.props.change}
+                        type="text"
+                        id="email"
+                    />
                     <br />
                     <button type="submit">Submit Contact Info</button>
                     <br />
                 </form>
                 <h2>Education</h2>
                 {/* iterate through number of educations to determine forms and input - Uniqid???    */}
-                <EducationForm
-                    clickEd={this.props.clickEd}
-                    changeEd={this.props.changeEd}
-                />
-                {this.props.education.map((edu,index) => {
-                    return <button onClick= {()=>updateEd(index)}>Edit {edu.institution}</button>;
-                    
+                {this.props.education.map((edu, index) => {
+                    console.log(this.props.education[index]);
+                    return (
+                        <EducationForm
+                            clickEd={this.props.clickEd}
+                            changeEd={this.props.changeEd}
+                            thisEd={this.props.education[index]}
+                            index = {index}
+                            updateEd= {this.props.updateEd}
+                        />
+                    );
                 })}
+
+                {this.props.education.map((edu, index) => {
+                    return (
+                        <button onClick={() => updateEd(index)}>
+                            Edit {edu.institution}
+                        </button>
+                    );
+                })}
+                {/* USE THIS TO PUT THE CORRECT EDUCATION AS THE FORM VALUE */}
 
                 <button>Add Another Institution</button>
                 <h2>Experience</h2>

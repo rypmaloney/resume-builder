@@ -37,48 +37,31 @@ class App extends React.Component {
             email: e.target.email.value,
         });
     };
-    onSubmitEd = (e, index) => {
+
+
+    updateEd = (e, index) => {
         e.preventDefault();
-        let educopy = this.state.education
-        educopy = {
-          institution: e.target.institution.value,
-          year: e.target.year.value,
-          details: e.target.desc.value,
-          id: '',
 
-          }
-
-          console.log(index, educopy)
-        // this.setState({
-        //   education: educopy,
-        
-        // });
-       
-
-    };
-      updateEd = (index) => {
-  
-        console.log(index)
-      // this.setState({
-      //   education: educopy,
-      
-      // });
-     
-
-  };
-
-    handleEdChange = (e) => {
-        let field = e.target.id;
-        let curEd = `education`
-
+        const eduCopy = this.state.education.slice();
+        eduCopy[index] = {
+            institution: e.target.institution.value,
+            year: e.target.year.value,
+            details: e.target.desc.value,
+            id: "",
+        };
         this.setState({
-            curEd: [
-                {
-                    [field]: e.target.value,
-                },
-            ],
+            education: eduCopy,
         });
+    };
 
+    handleEdChange = (e, index) => {
+        let field = e.target.id;
+        const eduCopy = this.state.education.slice();
+        eduCopy[index][field] = e.target.value
+        
+        this.setState({
+          education: eduCopy,
+        });
     };
 
     handleChange = (e) => {
@@ -86,8 +69,7 @@ class App extends React.Component {
         this.setState({
             [field]: e.target.value,
         });
-    }
-
+    };
 
     render() {
         return (
