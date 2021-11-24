@@ -1,8 +1,6 @@
-import React, { Component } from "react";
+const ExperienceForm = (props) => {
 
-class ExperienceForm extends React.Component {
-    render() {
-        const { thisXP, index, updateXP, changeXP } = this.props;
+        const { thisXP, index, updateXP, changeXP } = props;
 
         return (
             <div>
@@ -40,6 +38,6 @@ class ExperienceForm extends React.Component {
             </div>
         );
     }
-}
+
 
 export default ExperienceForm;

@@ -4,21 +4,21 @@ import Experience from "../Experience";
 import "./Display.css";
 
 const Display = (props) => {
-    //const { tasks } = props;
+    const { state } = props;
 
     return (
         <div>
             <div className="contact-display">
-                <h1>{props.state.name}</h1>
+                <h1>{state.name}</h1>
                 <div>
-                    <p>{props.state.address}</p>
-                    <p>{props.state.email}</p>
+                    <p>{state.address}</p>
+                    <p>{state.email}</p>
                 </div>
             </div>
             <hr />
             <div className="edex-display">
                 <h2>Education</h2>
-                {props.state.education.map((edu) => {
+                {state.education.map((edu) => {
                     return <Education key={edu.id} school={edu} />
                 })}
 
@@ -27,7 +27,7 @@ const Display = (props) => {
             <div className="edex-display">
                 <h2>Experience</h2>
 
-                {props.state.experience.map((edu) => {
+                {state.experience.map((edu) => {
                     return <Experience key={edu.id}experience={edu} />
                 })}
 

@@ -1,8 +1,4 @@
-import React from "react";
-
 const Education = (props) => {
-    //const { tasks } = props;
-
     return (
         <div>
             <div className="institution">
