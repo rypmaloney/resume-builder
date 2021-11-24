@@ -38,7 +38,6 @@ class App extends React.Component {
         });
     };
 
-
     updateEd = (e, index) => {
         e.preventDefault();
 
@@ -57,10 +56,10 @@ class App extends React.Component {
     handleEdChange = (e, index) => {
         let field = e.target.id;
         const eduCopy = this.state.education.slice();
-        eduCopy[index][field] = e.target.value
-        
+        eduCopy[index][field] = e.target.value;
+
         this.setState({
-          education: eduCopy,
+            education: eduCopy,
         });
     };
 
@@ -69,6 +68,16 @@ class App extends React.Component {
         this.setState({
             [field]: e.target.value,
         });
+    };
+    addEd = () => {
+        let curEd = this.state.education.slice()
+        curEd.push({
+            institution: "",
+            year: "",
+            details: "",
+        });
+        console.log(curEd)
+        this.setState({ education: curEd });
     };
 
     render() {
@@ -83,6 +92,7 @@ class App extends React.Component {
                         clickEd={this.onSubmitEd}
                         changeEd={this.handleEdChange}
                         updateEd={this.updateEd}
+                        addEd = {this.addEd}
                     />
                 </div>
                 <div className="display">

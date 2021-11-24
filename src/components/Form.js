@@ -33,7 +33,7 @@ class Form extends React.Component {
                 <h2>Education</h2>
                 {/* iterate through number of educations to determine forms and input - Uniqid???    */}
                 {this.props.education.map((edu, index) => {
-                    console.log(this.props.education[index]);
+                 
                     return (
                         <EducationForm
                             clickEd={this.props.clickEd}
@@ -41,20 +41,14 @@ class Form extends React.Component {
                             thisEd={this.props.education[index]}
                             index = {index}
                             updateEd= {this.props.updateEd}
+
                         />
                     );
                 })}
 
-                {this.props.education.map((edu, index) => {
-                    return (
-                        <button onClick={() => updateEd(index)}>
-                            Edit {edu.institution}
-                        </button>
-                    );
-                })}
                 {/* USE THIS TO PUT THE CORRECT EDUCATION AS THE FORM VALUE */}
 
-                <button>Add Another Institution</button>
+                <button onClick={this.props.addEd}>Add Another Institution</button>
                 <h2>Experience</h2>
                 <form onSubmit={this.props.click}>
                     <label htmlFor="nameInput">Name:</label>
