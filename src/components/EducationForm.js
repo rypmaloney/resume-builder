@@ -1,20 +1,22 @@
-import React from "react";
+import React, { Component } from "react";
 
-const EducationForm = (props) => {
+class EducationForm extends React.Component {
 
+    
+render(){
+    const{ clickEd } = this.props.clickEd
 
     return (
-        
         <div>
-            <form onSubmit={props.clickEd}>
+            <form onSubmit={clickEd}>
                 <label htmlFor="nameInput">Institution:</label>
-                <input onChange={props.changeEd} type="text" id="institution" /*value={props.institution} *//>
+                <input onChange={this.props.changeEd} type="text" id="institution" /*value={props.institution} *//>
                 <br />
                 <label htmlFor="address">Date:</label>
-                <input onChange={props.changeEd} type="text" id="year"  />
+                <input onChange={this.props.changeEd} type="text" id="year"  />
                 <br />
                 <label htmlFor="emailInput">description:</label>
-                <input onChange={props.changeEd} type="text" id="desc" />
+                <input onChange={this.props.changeEd} type="text" id="desc" />
                 <br />
                 <button type="submit">Submit Ed Info</button>
                 {/* Use props.index - create a function that updates education[index] */}
@@ -22,7 +24,7 @@ const EducationForm = (props) => {
                 <br />
             </form>
         </div>
-    );
+    );}
 };
 
 export default EducationForm;

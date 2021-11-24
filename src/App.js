@@ -37,7 +37,7 @@ class App extends React.Component {
             email: e.target.email.value,
         });
     };
-    onSubmitEd = (e) => {
+    onSubmitEd = (e, index) => {
         e.preventDefault();
         let educopy = this.state.education
         educopy = {
@@ -47,13 +47,25 @@ class App extends React.Component {
           id: '',
 
           }
-        this.setState({
-          education: educopy,
+
+          console.log(index, educopy)
+        // this.setState({
+        //   education: educopy,
         
-        });
+        // });
        
 
     };
+      updateEd = (index) => {
+  
+        console.log(index)
+      // this.setState({
+      //   education: educopy,
+      
+      // });
+     
+
+  };
 
     handleEdChange = (e) => {
         let field = e.target.id;
@@ -74,7 +86,8 @@ class App extends React.Component {
         this.setState({
             [field]: e.target.value,
         });
-    };
+    }
+
 
     render() {
         return (
@@ -87,6 +100,7 @@ class App extends React.Component {
                         education={this.state.education}
                         clickEd={this.onSubmitEd}
                         changeEd={this.handleEdChange}
+                        updateEd={this.updateEd}
                     />
                 </div>
                 <div className="display">
